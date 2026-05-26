@@ -20,7 +20,7 @@ export default function Products() {
         <section className="section">
           <div className="container">
             <div className="section-label reveal">Our Products</div>
-            <h2 className="section-title reveal reveal-delay-1">
+            <h2 className="section-title gradient-text reveal reveal-delay-1">
               Software that does the heavy lifting
             </h2>
             <p className="section-subtitle reveal reveal-delay-2">

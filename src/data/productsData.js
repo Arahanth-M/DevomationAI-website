@@ -2,66 +2,71 @@ export const productsData = [
   {
     id: 1,
     tag: "AI Interview",
-    icon: "🤖",
     name: "AI Interview Assistant",
     client: "TechUniversity",
-    description: "An automated interview platform that evaluates candidates' technical skills and cultural fit using advanced language models.",
-    whatItDoes: "The AI Interview Assistant automates the initial screening of candidates. It conducts dynamic, conversational interviews tailored to the role, evaluates responses using natural language processing, and generates comprehensive candidate scorecards. This significantly reduces the time and effort required by HR teams while ensuring a standardized evaluation process.",
-    screenshots: [
-      "https://via.placeholder.com/800x500?text=Interview+Dashboard",
-      "https://via.placeholder.com/800x500?text=Candidate+Scorecard"
+    description: "Cut screening time by 80% with AI-powered interviews that go beyond keywords — delivering structured scorecards and deep candidate insights, automatically.",
+    whatItDoes: "The AI Interview Assistant replaces first-round screening with dynamic, conversational interviews tailored to each role. It evaluates responses using natural language processing, scores candidates against custom rubrics, and delivers comprehensive scorecards — so HR teams spend their time on the best fits, not the inbox.",
+    highlights: [
+      "Conducts dynamic, role-tailored interviews autonomously",
+      "NLP-powered response evaluation with structured scoring rubrics",
+      "Auto-generated candidate scorecards for every applicant",
+      "Cuts recruiter screening time by up to 80%"
     ]
   },
   {
     id: 2,
     tag: "EdTech",
-    icon: "🎓",
     name: "Placement Prep Hub",
     client: "EduGlobal Institute",
-    description: "A comprehensive learning management system tailored for university students preparing for corporate placements.",
-    whatItDoes: "Placement Prep Hub offers students a centralized platform to prepare for their careers. It features mock tests, coding environments, interview preparation modules, and progress tracking. Universities can use it to monitor student readiness and tailor their training programs effectively.",
-    screenshots: [
-      "https://via.placeholder.com/800x500?text=Student+Dashboard",
-      "https://via.placeholder.com/800x500?text=Mock+Test+Environment"
+    description: "Give students an unfair advantage in campus placements — with adaptive mock tests, a live coding lab, and AI-guided interview simulations built for the real thing.",
+    whatItDoes: "Placement Prep Hub is the all-in-one career launchpad for university students. Students practice with adaptive mock tests, code in a live browser environment, and sharpen interview skills through AI-guided simulations. Universities gain real-time readiness dashboards to identify and support at-risk students before placement season hits.",
+    highlights: [
+      "Adaptive mock tests and live in-browser coding environment",
+      "AI-guided interview simulations with instant, actionable feedback",
+      "University dashboards for real-time student readiness tracking",
+      "Personalised learning paths driven by performance analytics"
     ]
   },
   {
     id: 3,
     tag: "Automation",
-    icon: "⚙️",
     name: "Workflow Automator",
     client: "Nexus Logistics",
-    description: "A custom n8n-powered workflow engine that automates supply chain tracking and client communications.",
-    whatItDoes: "This solution integrates disparate logistics systems into a unified workflow. It automatically tracks shipments, updates internal databases, and triggers real-time status notifications to clients via email and SMS. It reduces manual data entry and minimizes the risk of human error.",
-    screenshots: [
-      "https://via.placeholder.com/800x500?text=Workflow+Canvas",
-      "https://via.placeholder.com/800x500?text=Automation+Logs"
+    description: "Eliminate logistics chaos with a zero-touch automation engine that tracks shipments, updates databases, and notifies clients — all without a single manual step.",
+    whatItDoes: "Built on a custom n8n workflow engine, this solution stitches the entire supply chain into one intelligent flow. Shipment milestones trigger automatic database updates and push real-time alerts to clients via email and SMS. Manual data entry is eliminated, error rates drop dramatically, and the ops team gets back to work that actually matters.",
+    highlights: [
+      "End-to-end shipment tracking with automatic milestone updates",
+      "Real-time client notifications via email and SMS",
+      "Seamless integration across disparate logistics systems",
+      "Zero manual data entry — powered by n8n workflow automation"
     ]
   },
   {
     id: 4,
     tag: "FinTech",
-    icon: "📊",
     name: "FinServe Analytics Dashboard",
     client: "WealthGrow Partners",
-    description: "A real-time financial data visualization tool built on the MERN stack with Redis caching for ultra-fast load times.",
-    whatItDoes: "FinServe Analytics aggregates financial market data and presents it through interactive, real-time charts and widgets. With Redis caching, it ensures low latency even during high traffic periods, allowing financial advisors to make split-second decisions based on accurate data.",
-    screenshots: [
-      "https://via.placeholder.com/800x500?text=Analytics+Overview",
-      "https://via.placeholder.com/800x500?text=Real-time+Charts"
+    description: "Live market data, interactive charts, and sub-second load times — giving financial advisors the speed and clarity to act before the moment passes.",
+    whatItDoes: "FinServe Analytics aggregates live financial market data and renders it through fluid, interactive charts and widgets. Redis caching keeps load times near-instant even under heavy traffic, ensuring advisors always see accurate, up-to-the-second data. Whether monitoring a portfolio or spotting a market shift, every second counts — and FinServe delivers.",
+    highlights: [
+      "Real-time market data aggregation with live chart rendering",
+      "Redis caching for sub-second load times under peak traffic",
+      "Interactive widgets tailored to financial advisor workflows",
+      "Built on the MERN stack for scalable, maintainable performance"
     ]
   },
   {
     id: 5,
     tag: "HR Tech",
-    icon: "👥",
     name: "Smart HR Portal",
     client: "InnoCorp Solutions",
-    description: "An internal HR management tool featuring AI-driven resume parsing and automated onboarding workflows.",
-    whatItDoes: "Smart HR Portal streamlines the entire employee lifecycle. Its AI-driven resume parser instantly extracts key skills and experiences from uploaded resumes. Once hired, the platform automates the onboarding process, assigning tasks, scheduling inductions, and handling document collection seamlessly.",
-    screenshots: [
-      "https://via.placeholder.com/800x500?text=Resume+Parser",
-      "https://via.placeholder.com/800x500?text=Onboarding+Workflow"
+    description: "From résumé to ready-to-work in days — AI that reads between the lines, plus end-to-end onboarding automation so your HR team focuses on people, not paperwork.",
+    whatItDoes: "Smart HR Portal reimagines the employee journey from day one. Its AI resume parser instantly extracts skills, experience, and cultural signals from uploaded CVs. Once an offer is accepted, the platform takes over — assigning tasks, scheduling inductions, collecting documents, and tracking completion — turning a weeks-long process into a seamless, days-long experience.",
+    highlights: [
+      "AI resume parser that extracts skills, experience, and cultural signals instantly",
+      "Fully automated onboarding: task assignment, inductions, and document collection",
+      "End-to-end employee lifecycle management in one portal",
+      "Dramatically reduces time-to-productivity for every new hire"
     ]
   }
 ];

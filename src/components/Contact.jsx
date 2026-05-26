@@ -1,81 +1,40 @@
-// export default function Contact() {
-//   return (
-//     <>
-//       <section id="contact" className="contact section-bg">
-//         <div className="container">
-//           <div className="row">
-//             <div className="col-lg-4 col-md-6">
-//               <div className="contact-about">
-//                 <h3>Devomation AI</h3>
-//                 <p>AI solutions for modern enterprises</p>
-//                 <div className="social-links">
-//                   <a href="#" className="linkedin"><i className="icofont-linkedin"></i></a>
-//                 </div>
-//               </div>
-//             </div>
-
-//             <div className="col-lg-3 col-md-6">
-//               <div className="info">
-//                 <div>
-//                   <i className="icofont-google-map"></i>
-//                   <p>3rd Block Rajajinagar Bangalore</p>
-//                 </div>
-
-//                 <div>
-//                   <i className="icofont-envelope"></i>
-//                   <p>devomationai@gmail.com</p>
-//                 </div>
-//               </div>
-//             </div>
-
-//             <div className="col-lg-5 col-md-12">
-//               <form action="forms/contact.php" method="post" role="form" className="php-email-form">
-//                 <div className="form-group">
-//                   <input type="text" name="name" className="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-//                   <div className="validate"></div>
-//                 </div>
-//                 <div className="form-group">
-//                   <input type="email" className="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-//                   <div className="validate"></div>
-//                 </div>
-//                 <div className="form-group">
-//                   <input type="text" className="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-//                   <div className="validate"></div>
-//                 </div>
-//                 <div className="form-group">
-//                   <textarea className="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-//                   <div className="validate"></div>
-//                 </div>
-//                 <div className="mb-3">
-//                   <div className="loading">Loading</div>
-//                   <div className="error-message"></div>
-//                   <div className="sent-message">Your message has been sent. Thank you!</div>
-//                 </div>
-//                 <div className="text-center"><button type="submit">Send Message</button></div>
-//               </form>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       <section className="map">
-//         <iframe src="https://maps.google.com/maps?q=3rd%20Block%20Rajajinagar,%20Bangalore,%20560010&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style={{ border: 0 }} allowFullScreen="" loading="lazy" title="Location Map"></iframe>
-//       </section>
-//     </>
-//   );
-// }
 import { useState } from 'react';
+
+function validate(values) {
+  const errs = {};
+  if (!values.name.trim()) errs.name = 'Name is required.';
+  else if (values.name.trim().length < 4) errs.name = 'Name must be at least 4 characters.';
+  if (!values.email.trim()) errs.email = 'Email is required.';
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) errs.email = 'Please enter a valid email address.';
+  if (!values.message.trim()) errs.message = 'Message is required.';
+  return errs;
+}
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
 
-  const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setForm(f => ({ ...f, [name]: value }));
+    if (touched[name]) setErrors(validate({ ...form, [name]: value }));
+  };
+
+  const handleBlur = e => {
+    const { name } = e.target;
+    setTouched(t => ({ ...t, [name]: true }));
+    setErrors(validate(form));
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
-    // In production: POST to your backend
-    setSent(true);
+    const allTouched = { name: true, email: true, message: true };
+    setTouched(allTouched);
+    const errs = validate(form);
+    setErrors(errs);
+    if (Object.keys(errs).length === 0) setSent(true);
   };
 
   return (
@@ -102,21 +61,18 @@ export default function Contact() {
 
               <div className="contact-info-block">
                 <div className="contact-info-item">
-                  <div className="contact-info-icon">📍</div>
                   <div>
                     <h4>Office</h4>
                     <p>3rd Block Rajajinagar, Bangalore — 560010</p>
                   </div>
                 </div>
                 <div className="contact-info-item">
-                  <div className="contact-info-icon">✉️</div>
                   <div>
                     <h4>Email</h4>
                     <a href="mailto:devomationai@gmail.com">devomationai@gmail.com</a>
                   </div>
                 </div>
                 <div className="contact-info-item">
-                  <div className="contact-info-icon">💼</div>
                   <div>
                     <h4>LinkedIn</h4>
                     <a href="https://linkedin.com/company/devomation-ai" target="_blank" rel="noopener noreferrer">linkedin.com/company/devomation-ai</a>
@@ -133,7 +89,7 @@ export default function Contact() {
                     <div style={{ fontSize: '2.5rem', marginBottom: '16px' }}>✅</div>
                     <h3 style={{ marginBottom: '8px' }}>Message sent!</h3>
                     <p style={{ color: 'var(--text-muted)' }}>We'll get back to you within 48 hours.</p>
-                    <button onClick={() => setSent(false)} style={{ marginTop: '24px', padding: '10px 22px', borderRadius: '8px', background: 'var(--accent)', color: '#fff', border: 'none', fontWeight: 600, cursor: 'pointer' }}>
+                    <button onClick={() => setSent(false)} className="btn-primary" style={{ marginTop: '24px' }}>
                       Send another
                     </button>
                   </div>
@@ -142,11 +98,23 @@ export default function Contact() {
                     <div className="form-row">
                       <div className="form-group">
                         <label>Your Name</label>
-                        <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="John Doe" required />
+                        <input
+                          type="text" name="name" value={form.name}
+                          onChange={handleChange} onBlur={handleBlur}
+                          placeholder="John Doe"
+                          className={touched.name && errors.name ? 'input-error' : ''}
+                        />
+                        {touched.name && errors.name && <span className="form-error">{errors.name}</span>}
                       </div>
                       <div className="form-group">
                         <label>Email Address</label>
-                        <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="john@company.com" required />
+                        <input
+                          type="email" name="email" value={form.email}
+                          onChange={handleChange} onBlur={handleBlur}
+                          placeholder="john@company.com"
+                          className={touched.email && errors.email ? 'input-error' : ''}
+                        />
+                        {touched.email && errors.email && <span className="form-error">{errors.email}</span>}
                       </div>
                     </div>
                     <div className="form-group">
@@ -155,17 +123,15 @@ export default function Contact() {
                     </div>
                     <div className="form-group">
                       <label>Message</label>
-                      <textarea name="message" value={form.message} onChange={handleChange} rows={5} placeholder="Tell us about your project or institution..." required />
+                      <textarea
+                        name="message" value={form.message}
+                        onChange={handleChange} onBlur={handleBlur}
+                        rows={5} placeholder="Tell us about your project or institution..."
+                        className={touched.message && errors.message ? 'input-error' : ''}
+                      />
+                      {touched.message && errors.message && <span className="form-error">{errors.message}</span>}
                     </div>
-                    <button type="submit" style={{
-                      width: '100%', padding: '14px', borderRadius: '10px',
-                      background: 'var(--accent)', color: '#fff', fontFamily: 'var(--font-body)',
-                      fontWeight: 700, fontSize: '1rem', border: 'none', cursor: 'pointer',
-                      transition: 'all 0.25s', letterSpacing: '0.01em'
-                    }}
-                      onMouseEnter={e => { e.target.transform = 'translateY(-2px)'; e.target.style.opacity = '0.9'; }}
-                      onMouseLeave={e => { e.target.style.opacity = '1'; }}
-                    >
+                    <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center', padding: '14px', fontSize: '1rem' }}>
                       Send Message →
                     </button>
                   </form>

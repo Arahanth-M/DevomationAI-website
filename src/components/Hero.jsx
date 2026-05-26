@@ -13,7 +13,7 @@ const PlayIcon = () => (
 );
 
 const stats = [
-  { num: '3+', label: 'Active Products' },
+  { num: '3+',  label: 'Active Products' },
   { num: '10+', label: 'Institutions Partnered' },
   { num: '5K+', label: 'Users Served' },
 ];
@@ -27,15 +27,26 @@ const taglines = [
 export default function Hero() {
   return (
     <section className="hero hero-editorial">
+      {/* Aurora background orbs */}
+      <div className="hero-orb hero-orb-1" aria-hidden="true" />
+      <div className="hero-orb hero-orb-2" aria-hidden="true" />
+      <div className="hero-orb hero-orb-3" aria-hidden="true" />
+
       <div className="hero-corner-grid" aria-hidden="true" />
       <div className="hero-grid" aria-hidden="true" />
 
       <div className="container hero-inner">
+        {/* Announcement badge */}
+        <div className="hero-badge hero-fade-in" aria-label="Company focus areas">
+          <span className="hero-badge-dot" aria-hidden="true" />
+          AI-native · EdTech · Automation · Enterprise
+        </div>
+
         <div className="hero-top">
-          <h1 className="hero-wordmark hero-fade-in">
+          <h1 className="hero-wordmark hero-fade-in hero-fade-in-delay-1">
             DEVOMATION <span>AI</span>
           </h1>
-          <p className="hero-intro hero-fade-in hero-fade-in-delay-1">
+          <p className="hero-intro hero-fade-in hero-fade-in-delay-2">
             Devomation AI crafts scalable platforms, automation systems, and intelligent
             products that help institutions, startups, and enterprises operate at their best.
           </p>
@@ -45,7 +56,7 @@ export default function Hero() {
           {taglines.map((line, i) => (
             <p
               key={line.bright}
-              className={`hero-tagline-line hero-fade-in hero-fade-in-delay-${i + 2}`}
+              className={`hero-tagline-line hero-fade-in hero-fade-in-delay-${i + 3}`}
             >
               <span className={line.accent ? 'hero-tagline-muted underline-accent' : 'hero-tagline-muted'}>
                 {line.muted}

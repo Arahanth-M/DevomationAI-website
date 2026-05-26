@@ -112,7 +112,6 @@ export default function Footer() {
               <div className="footer-social">
                 <a href="mailto:devomationai@gmail.com" aria-label="Email"><MailIcon /></a>
                 <a href="https://linkedin.com/company/devomation-ai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><LinkedInIcon /></a>
-                <a href="https://instagram.com/devomation.ai" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><InstagramIcon /></a>
               </div>
             </div>
 

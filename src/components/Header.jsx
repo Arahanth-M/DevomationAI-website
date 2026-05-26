@@ -64,9 +64,10 @@ export default function Header() {
   useEffect(() => { setNavOpen(false); }, [location]);
 
   const navLinks = [
-    { label: 'Home', to: '/', exact: true },
+    { label: 'Home',     to: '/',         exact: true },
     { label: 'Products', to: '/products' },
-    { label: 'Team', to: '/team' },
+    { label: 'Team',     to: '/team' },
+    { label: 'Contact',  href: '/#contact' },
   ];
 
   const isActive = (to, exact) =>
@@ -86,13 +87,17 @@ export default function Header() {
           <nav>
             <ul className={`nav${navOpen ? ' open' : ''}`}>
               {navLinks.map(link => (
-                <li key={link.to}>
-                  <Link
-                    to={link.to}
-                    className={isActive(link.to, link.exact) ? 'active' : ''}
-                  >
-                    {link.label}
-                  </Link>
+                <li key={link.to || link.href}>
+                  {link.href ? (
+                    <a href={link.href}>{link.label}</a>
+                  ) : (
+                    <Link
+                      to={link.to}
+                      className={isActive(link.to, link.exact) ? 'active' : ''}
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -100,9 +105,7 @@ export default function Header() {
 
           {/* Actions */}
           <div className="nav-actions">
-            <Link to="/products" className="btn-primary" style={{ display: 'none', '--d': 'flex' }}
-              onMouseEnter={e => e.currentTarget.style.display = 'inline-flex'}
-            >
+            <Link to="/products" className="btn-primary">
               Get Started
             </Link>
 

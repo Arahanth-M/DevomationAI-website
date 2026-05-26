@@ -28,6 +28,7 @@ import About from '../components/About';
 import WhyUs from '../components/WhyUs';
 import TechStack from '../components/TechStack';
 import OurClients from '../components/OurClients';
+import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 import { useScrollReveal } from '../utils/UseScrollreveal';
 
@@ -69,6 +70,7 @@ export default function Home() {
         <WhyUs />
         <TechStack />
         <OurClients />
+        <Testimonials />
         <Contact />
       </main>
       <Footer />

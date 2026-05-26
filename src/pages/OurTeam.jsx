@@ -11,7 +11,7 @@ const teamMembers = [
   },
   {
     name: 'Akshatha A',
-    role: 'Co-Founder & UI/UX Designer',
+    role: 'Co-Founder & Developer',
     email: 'jane@devomation.ai',
     image: 'https://via.placeholder.com/300x300?text=Akshatha+A',
   },

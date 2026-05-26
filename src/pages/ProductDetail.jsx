@@ -36,34 +36,31 @@ export default function ProductDetail() {
             </Link>
 
             <div className="section-label reveal">{product.tag}</div>
-            <h1 className="section-title reveal reveal-delay-1">{product.name}</h1>
+            <h1 className="section-title gradient-text reveal reveal-delay-1">{product.name}</h1>
             <p className="detail-meta reveal reveal-delay-2">
               Built for <strong style={{ color: 'var(--heading)' }}>{product.client}</strong>
             </p>
 
             <div className="panel-card reveal reveal-delay-2">
-              <h3 className="panel-card-title">Quick description</h3>
-              <p>{product.description}</p>
+              <h3 className="panel-card-title panel-card-title--teal">Overview</h3>
+              <p className="panel-lead">{product.description}</p>
 
               <hr className="panel-divider" />
 
-              <h3 className="panel-card-title">What it does</h3>
+              <h3 className="panel-card-title panel-card-title--purple">What it does</h3>
               <p>{product.whatItDoes}</p>
-            </div>
 
-            <h2
-              className="section-title reveal"
-              style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', marginTop: '64px', marginBottom: '0' }}
-            >
-              Screenshots
-            </h2>
-
-            <div className="screenshot-grid">
-              {product.screenshots.map((img, idx) => (
-                <div key={idx} className={`screenshot-card reveal reveal-delay-${(idx % 2) + 1}`}>
-                  <img src={img} alt={`${product.name} screenshot ${idx + 1}`} />
-                </div>
-              ))}
+              {product.highlights && (
+                <>
+                  <hr className="panel-divider" />
+                  <h3 className="panel-card-title panel-card-title--gradient">Key capabilities</h3>
+                  <ul className="panel-highlights">
+                    {product.highlights.map((h, i) => (
+                      <li key={i}>{h}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </div>
           </div>
         </section>

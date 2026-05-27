@@ -5,19 +5,19 @@ import { useScrollReveal } from '../utils/UseScrollreveal';
 const teamMembers = [
   {
     name: 'Arahanth M',
-    role: 'Co-Founder & Developer',
+    role: 'Developer',
     email: 'john@devomation.ai',
     image: 'https://via.placeholder.com/300x300?text=Arahanth+M',
   },
   {
     name: 'Akshatha A',
-    role: 'Co-Founder & Developer',
+    role: 'Developer',
     email: 'jane@devomation.ai',
     image: 'https://via.placeholder.com/300x300?text=Akshatha+A',
   },
   {
     name: 'Darshan Kashyap N',
-    role: 'Lead Engineer',
+    role: 'Developer',
     email: 'alex@devomation.ai',
     image: 'https://via.placeholder.com/300x300?text=Darshan+Kashyap+N',
   },

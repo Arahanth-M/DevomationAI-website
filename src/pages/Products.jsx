@@ -23,9 +23,7 @@ export default function Products() {
             <h2 className="section-title gradient-text reveal reveal-delay-1">
               Software that does the heavy lifting
             </h2>
-            <p className="section-subtitle reveal reveal-delay-2">
-              Explore the scalable digital platforms and tools we have built for our clients.
-            </p>
+
 
             <div className="products-grid">
               {productsData.map((product, i) => (

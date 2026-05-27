@@ -36,9 +36,7 @@ export default function OurTeam() {
             <h2 className="section-title reveal reveal-delay-1">
               The people behind Devomation AI
             </h2>
-            <p className="section-subtitle reveal reveal-delay-2">
-              Meet the passionate individuals building intelligent software for education and enterprise.
-            </p>
+
 
             <div className="team-grid">
               {teamMembers.map((member, i) => (

@@ -43,7 +43,7 @@ export default function Contact() {
 
       // Web3Forms free contact form integration
       // Access key can be defined in .env as VITE_WEB3FORMS_KEY
-      const accessKey = import.meta.env.VITE_WEB3FORMS_KEY || "16a75eca-5e77-4d8b-bf56-5323bc206346";
+      const accessKey = import.meta.env.VITE_WEB3FORMS_KEY;
 
       try {
         const response = await fetch("https://api.web3forms.com/submit", {
@@ -178,14 +178,14 @@ export default function Contact() {
                         {submitError}
                       </div>
                     )}
-                    <button 
-                      type="submit" 
-                      className="btn-primary" 
+                    <button
+                      type="submit"
+                      className="btn-primary"
                       disabled={isSubmitting}
-                      style={{ 
-                        width: '100%', 
-                        justifyContent: 'center', 
-                        padding: '14px', 
+                      style={{
+                        width: '100%',
+                        justifyContent: 'center',
+                        padding: '14px',
                         fontSize: '1rem',
                         opacity: isSubmitting ? 0.7 : 1,
                         cursor: isSubmitting ? 'not-allowed' : 'pointer'

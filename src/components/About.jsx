@@ -1,18 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 
 const stats = [
-  { target: 3,    suffix: '+',  label: 'Products Launched' },
-  { target: 10,   suffix: '+',  label: 'Institutions Partnered' },
-  { target: 5,    suffix: 'K+', label: 'End Users Served' },
-  { target: 2023, suffix: '',   label: 'Founded' },
-];
-
-const expertise = [
-  'Full-Stack Development',
-  'AI Integrations',
-  'Cloud Deployment',
-  'Workflow Automation',
-  'Scalable Backend Systems',
+  { target: 3, suffix: '+', label: 'Products Launched' },
+  { target: 10, suffix: '+', label: 'Institutions Partnered' },
+  { target: 5, suffix: 'K+', label: 'End Users Served' },
+  { target: 2026, suffix: '', label: 'Founded' },
 ];
 
 function StatCard({ target, suffix, label, delay, triggered }) {
@@ -61,33 +53,26 @@ export default function About() {
   return (
     <section id="about" className="section" style={{ background: 'var(--bg-surface)', borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)' }}>
       <div className="container">
+        <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <div className="section-label" style={{ justifyContent: 'center' }}>About Us</div>
+          <h2 className="section-title reveal">
+            Turning ambitious ideas into production software
+          </h2>
+        </div>
+
         <div className="about-layout">
 
-          {/* Left: stat grid + expertise tags */}
+          {/* Left: stat grid */}
           <div className="about-visual reveal">
             <div className="about-stats-grid" ref={gridRef}>
               {stats.map((s, i) => (
                 <StatCard key={s.label} {...s} delay={i + 1} triggered={triggered} />
               ))}
             </div>
-
-            <div className="about-expertise">
-              <span className="about-expertise-label">What we build with</span>
-              <div className="about-tags">
-                {expertise.map(e => (
-                  <span key={e} className="about-tag">{e}</span>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Right: text + CTA */}
           <div className="about-text">
-            <div className="section-label">About Us</div>
-            <h2 className="section-title reveal">
-              Turning ambitious ideas into production software
-            </h2>
-
             <div className="reveal reveal-delay-1">
               <p className="about-lead">
                 At Devomation AI, we transform ideas into intelligent digital solutions — building

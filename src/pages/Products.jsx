@@ -17,9 +17,9 @@ export default function Products() {
     <>
       <Header />
       <main>
-        <section className="section">
+        <section className="section inner-page-section">
           <div className="container">
-            <div className="section-label reveal">Our Products</div>
+
             <h2 className="section-title gradient-text reveal reveal-delay-1">
               Software that does the heavy lifting
             </h2>

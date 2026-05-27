@@ -67,7 +67,6 @@ export default function Header() {
     { label: 'Home',     to: '/',         exact: true },
     { label: 'Products', to: '/products' },
     { label: 'Team',     to: '/team' },
-    { label: 'Contact',  href: '/#contact' },
   ];
 
   const isActive = (to, exact) =>
@@ -105,10 +104,6 @@ export default function Header() {
 
           {/* Actions */}
           <div className="nav-actions">
-            <Link to="/products" className="btn-primary">
-              Get Started
-            </Link>
-
             {/* Mobile toggle */}
             <button
               className="nav-toggle"

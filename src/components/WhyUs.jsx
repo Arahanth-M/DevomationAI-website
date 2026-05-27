@@ -21,19 +21,21 @@ export default function WhyUs() {
   return (
     <section className="section whyus-bg">
       <div className="container">
+        <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <div className="section-label" style={{ justifyContent: 'center' }}>Why Devomation AI</div>
+          <h2 className="section-title reveal">
+            Engineered for scale, built for trust
+          </h2>
+          <p className="section-subtitle reveal reveal-delay-1" style={{ margin: '0 auto' }}>
+            We partner with institutions and enterprises that take technology seriously.
+          </p>
+        </div>
+
         <div className="whyus-inner">
 
           {/* Left: reasons */}
           <div>
-            <div className="section-label">Why Devomation AI</div>
-            <h2 className="section-title reveal">
-              Engineered for scale, built for trust
-            </h2>
-            <p className="section-subtitle reveal reveal-delay-1">
-              We partner with institutions and enterprises that take technology seriously.
-            </p>
-
-            <ul className="whyus-list">
+            <ul className="whyus-list" style={{ marginTop: 0 }}>
               {reasons.map((r, i) => (
                 <li key={r.title} className={`whyus-item reveal reveal-delay-${i + 1}`}>
                   <div className="whyus-item-num">0{i + 1}</div>

@@ -23,7 +23,7 @@ export default function Testimonials() {
   return (
     <section className="section testimonials-section">
       <div className="container">
-        <div style={{ textAlign: 'center' }}>
+        <div style={{ textAlign: 'center', marginBottom: '48px' }}>
           <div className="section-label" style={{ justifyContent: 'center' }}>What Clients Say</div>
           <h2 className="section-title reveal">Trusted by the teams building tomorrow</h2>
           <p className="section-subtitle reveal reveal-delay-1" style={{ margin: '0 auto' }}>

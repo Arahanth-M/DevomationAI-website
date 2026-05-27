@@ -29,13 +29,13 @@ export default function ProductDetail() {
     <>
       <Header />
       <main>
-        <section className="section">
+        <section className="section inner-page-section">
           <div className="container">
             <Link to="/products" className="page-back-link reveal">
               &larr; Back to products
             </Link>
 
-            <div className="section-label reveal">{product.tag}</div>
+
             <h1 className="section-title gradient-text reveal reveal-delay-1">{product.name}</h1>
             <p className="detail-meta reveal reveal-delay-2">
               Built for <strong style={{ color: 'var(--heading)' }}>{product.client}</strong>
@@ -59,6 +59,27 @@ export default function ProductDetail() {
                       <li key={i}>{h}</li>
                     ))}
                   </ul>
+                </>
+              )}
+
+              {product.techStack && (
+                <>
+                  <hr className="panel-divider" />
+                  <h3 className="panel-card-title panel-card-title--teal">Tech Stack</h3>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '12px' }}>
+                    {product.techStack.map((tech, i) => (
+                      <span key={i} style={{
+                        padding: '6px 16px',
+                        borderRadius: '100px',
+                        background: 'rgba(74, 158, 255, 0.08)',
+                        border: '1px solid rgba(74, 158, 255, 0.2)',
+                        fontSize: '0.82rem',
+                        fontWeight: 600,
+                        color: 'var(--accent)',
+                        letterSpacing: '0.02em',
+                      }}>{tech}</span>
+                    ))}
+                  </div>
                 </>
               )}
             </div>

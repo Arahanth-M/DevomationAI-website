@@ -12,12 +12,6 @@ const PlayIcon = () => (
   </svg>
 );
 
-const stats = [
-  { num: '3+',  label: 'Active Products' },
-  { num: '10+', label: 'Institutions Partnered' },
-  { num: '5K+', label: 'Users Served' },
-];
-
 const taglines = [
   { muted: 'AI-DRIVEN', bright: 'SOFTWARE', accent: true },
   { muted: 'INTELLIGENT', bright: 'INNOVATION' },
@@ -37,10 +31,7 @@ export default function Hero() {
 
       <div className="container hero-inner">
         {/* Announcement badge */}
-        <div className="hero-badge hero-fade-in" aria-label="Company focus areas">
-          <span className="hero-badge-dot" aria-hidden="true" />
-          AI-native · EdTech · Automation · Enterprise
-        </div>
+
 
         <div className="hero-top">
           <h1 className="hero-wordmark hero-fade-in hero-fade-in-delay-1">
@@ -74,15 +65,6 @@ export default function Hero() {
           <a href="#contact" className="btn-hero-ghost">
             <PlayIcon /> Get a Demo
           </a>
-        </div>
-
-        <div className="hero-stats hero-fade-in hero-fade-in-delay-6">
-          {stats.map((s) => (
-            <div key={s.label} className="hero-stat-item">
-              <span className="hero-stat-num">{s.num}</span>
-              <span className="hero-stat-label">{s.label}</span>
-            </div>
-          ))}
         </div>
       </div>
     </section>

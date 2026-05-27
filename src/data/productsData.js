@@ -1,16 +1,27 @@
 export const productsData = [
   {
     id: 1,
-    tag: "AI Interview",
-    name: "AI Interview Assistant",
-    client: "TechUniversity",
-    description: "Cut screening time by 80% with AI-powered interviews that go beyond keywords — delivering structured scorecards and deep candidate insights, automatically.",
-    whatItDoes: "The AI Interview Assistant replaces first-round screening with dynamic, conversational interviews tailored to each role. It evaluates responses using natural language processing, scores candidates against custom rubrics, and delivers comprehensive scorecards — so HR teams spend their time on the best fits, not the inbox.",
+    tag: "EdTech",
+    name: "Last Minute Placement Prep",
+    client: "RV College of Engineering",
+    description: "An all-in-one, AI-powered placement preparation platform built for RVCE students — featuring 200+ company profiles, 150+ real interview experiences, AI mock interviews with a built-in coding editor, and 3+ years of placement insights. Beta-tested across multiple branches with overwhelmingly positive feedback.",
+    whatItDoes: "Last Minute Placement Prep is a student-driven ecosystem where users actively share interview experiences from campus recruitment. The platform uses end-to-end AI automation to continuously track new companies visiting RVCE, keeping data fresh and relevant. Students get company-specific interview questions, practice problems, must-do topics, business model overviews, and previous coding questions with solution intuitions — all in one place. Combined with a resume builder (ATS-friendly templates + score analysis), year-wise placement statistics, performance analytics, and curated learning resources, it helps students prepare smarter by understanding exactly what to study and how to align their preparation with real company expectations.",
     highlights: [
-      "Conducts dynamic, role-tailored interviews autonomously",
-      "NLP-powered response evaluation with structured scoring rubrics",
-      "Auto-generated candidate scorecards for every applicant",
-      "Cuts recruiter screening time by up to 80%"
+      "AI-powered mock interviews with an integrated coding editor, tailored to companies visiting RVCE",
+      "200+ company profiles with interview experiences, questions, and must-do topics",
+      "Resume builder with ATS-friendly templates and ATS score analysis",
+      "Year-wise and branch-wise placement statistics for data-driven preparation",
+      "Performance analysis to identify individual strengths and weaknesses",
+      "Curated learning resources for focused, strategic preparation"
+    ],
+    techStack: [
+      "React + Vite",
+      "Node.js",
+      "MongoDB",
+      "Hetzner Cloud",
+      "AWS",
+      "n8n Automation",
+      "Cursor AI"
     ]
   },
   {

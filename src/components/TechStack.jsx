@@ -45,7 +45,7 @@ export default function TechStack() {
   return (
     <section id="team" className="section tech-section">
       <div className="container">
-        <div style={{ textAlign: 'center' }}>
+        <div style={{ textAlign: 'center', marginBottom: '48px' }}>
           <div className="section-label" style={{ justifyContent: 'center' }}>Technology</div>
           <h2 className="section-title gradient-text reveal">Built on proven, modern infrastructure</h2>
           <p className="section-subtitle reveal reveal-delay-1" style={{ margin: '0 auto' }}>

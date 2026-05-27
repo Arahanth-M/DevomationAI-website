@@ -28,8 +28,8 @@ const products = [
   {
     tag: 'EdTech',
     icon: '🎓',
-    name: 'PlacePrep Pro',
-    desc: 'A comprehensive placement preparation platform with AI-generated mock interviews, aptitude tracking, company-specific problem sets, and real-time progress dashboards for campus training teams.',
+    name: 'Last Minute Placement Prep',
+    desc: 'AI-powered placement prep for RVCE students — 200+ company profiles, 150+ interview experiences, mock interviews with a coding editor, resume builder, and 3+ years of real placement data.',
   },
   {
     tag: 'AI Interview',

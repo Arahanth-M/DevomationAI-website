@@ -15,6 +15,8 @@ export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -28,13 +30,53 @@ export default function Contact() {
     setErrors(validate(form));
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     const allTouched = { name: true, email: true, message: true };
     setTouched(allTouched);
     const errs = validate(form);
     setErrors(errs);
-    if (Object.keys(errs).length === 0) setSent(true);
+
+    if (Object.keys(errs).length === 0) {
+      setIsSubmitting(true);
+      setSubmitError(null);
+
+      // Web3Forms free contact form integration
+      // Access key can be defined in .env as VITE_WEB3FORMS_KEY
+      const accessKey = import.meta.env.VITE_WEB3FORMS_KEY || "16a75eca-5e77-4d8b-bf56-5323bc206346";
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: accessKey,
+            name: form.name,
+            email: form.email,
+            subject: form.subject || `Devomation AI Contact Form: ${form.name}`,
+            message: form.message,
+            from_name: "Devomation AI Website",
+          }),
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          setSent(true);
+          setForm({ name: '', email: '', subject: '', message: '' });
+          setTouched({});
+        } else {
+          setSubmitError(result.message || "Something went wrong. Please try again.");
+        }
+      } catch (err) {
+        setSubmitError("Failed to connect to the server. Please check your internet connection.");
+      } finally {
+        setIsSubmitting(false);
+      }
+    }
   };
 
   return (
@@ -131,8 +173,25 @@ export default function Contact() {
                       />
                       {touched.message && errors.message && <span className="form-error">{errors.message}</span>}
                     </div>
-                    <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center', padding: '14px', fontSize: '1rem' }}>
-                      Send Message →
+                    {submitError && (
+                      <div className="form-error" style={{ marginBottom: '16px', display: 'block', padding: '10px', background: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.2)', borderRadius: '6px', color: '#ef4444' }}>
+                        {submitError}
+                      </div>
+                    )}
+                    <button 
+                      type="submit" 
+                      className="btn-primary" 
+                      disabled={isSubmitting}
+                      style={{ 
+                        width: '100%', 
+                        justifyContent: 'center', 
+                        padding: '14px', 
+                        fontSize: '1rem',
+                        opacity: isSubmitting ? 0.7 : 1,
+                        cursor: isSubmitting ? 'not-allowed' : 'pointer'
+                      }}
+                    >
+                      {isSubmitting ? 'Sending Message...' : 'Send Message →'}
                     </button>
                   </form>
                 )}

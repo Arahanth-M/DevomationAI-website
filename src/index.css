@@ -355,16 +355,16 @@ img { max-width: 100%; display: block; }
 ============================================================ */
 
 .hero {
-  min-height: 100svh;
+  min-height: 85svh;
   display: flex;
   align-items: center;
-  padding: 120px 0 80px;
+  padding: 100px 0 80px;
   position: relative;
   overflow: hidden;
 }
 
 .hero-editorial {
-  align-items: flex-end;
+  align-items: center;
   padding-bottom: 72px;
 }
 
@@ -1810,6 +1810,16 @@ img { max-width: 100%; display: block; }
    INNER PAGES (product detail, team)
 ============================================================ */
 
+.inner-page-section {
+  padding-top: 130px !important;
+}
+
+@media (max-width: 768px) {
+  .inner-page-section {
+    padding-top: 95px !important;
+  }
+}
+
 .page-back-link {
   display: flex;
   width: fit-content;
@@ -2013,11 +2023,11 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 768px) {
-  .section              { padding: 70px 0; }
-  .hero                 { padding: 100px 0 60px; }
+  .section              { padding: 60px 0; }
+  .hero                 { padding: 80px 0 60px; }
   .hero-top             { grid-template-columns: 1fr; gap: 24px; }
   .hero-intro           { justify-self: start; max-width: none; }
-  .hero-tagline-line    { font-size: clamp(1.1rem, 5.5vw, 1.6rem); }
+  .hero-tagline-line    { font-size: clamp(0.95rem, 4.5vw, 1.3rem); margin-bottom: 0.45em; }
   .features-grid        { grid-template-columns: 1fr; }
   .products-grid        { grid-template-columns: 1fr; }
   .testimonials-grid    { grid-template-columns: 1fr; }

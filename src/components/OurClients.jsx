@@ -78,7 +78,7 @@ export default function OurClients() {
 
   return (
     <section id="faq" className="clients-section" style={{ background: 'var(--bg-surface)', borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)' }}>
-      <div className="container" style={{ textAlign: 'center', marginBottom: '0' }}>
+      <div className="container" style={{ textAlign: 'center', marginBottom: '40px' }}>
         <div className="section-label" style={{ justifyContent: 'center' }}>Trusted By</div>
         <h2 className="section-title reveal" style={{ marginBottom: '8px' }}>
           Institutions we're proud to work with

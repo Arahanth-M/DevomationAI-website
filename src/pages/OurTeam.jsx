@@ -30,9 +30,9 @@ export default function OurTeam() {
     <>
       <Header />
       <main>
-        <section className="section">
+        <section className="section inner-page-section">
           <div className="container">
-            <div className="section-label reveal">Our team</div>
+
             <h2 className="section-title reveal reveal-delay-1">
               The people behind Devomation AI
             </h2>
